@@ -156,9 +156,16 @@ m_health_points = random.choice(diceOptions)
 print("Player rolled " + str(m_health_points) + " health points for the monster")
 
 
-# Lab 04 - Q5
-print("You finde a loot bag! Look inside to find 2 items.")
+# Lab 04 - Q5 item 1
+print("You find a loot bag! Look inside to find 2 items.")
 print("Roll for the first item (Press Enter)")
+lootRoll = random.choice(range(1, len(loot_options) + 1))
+loot = loot_options.pop(lootRoll - 1)
+belt.append(loot)
+print("Your belt: ", belt)
+
+# Lab 04 - Q6 item 2
+print("Roll for the second item (Press Enter)")
 lootRoll = random.choice(range(1, len(loot_options) + 1))
 loot = loot_options.pop(lootRoll - 1)
 belt.append(loot)
