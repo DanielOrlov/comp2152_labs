@@ -172,6 +172,11 @@ belt.append(loot)
 print("Your belt: ", belt)
 
 
+# Lab 04 - Q7 - Sort the belt
+print("You got the loot, so organize your belt alphabetically:")
+belt.sort()
+print("Your belt: ", belt)
+
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
 print("--- You are matched in strength: " + str(combat_strength == m_combat_strength))
