@@ -172,14 +172,14 @@ if not input_invalid:
     print("    |", end="    ")
     num_dream_lvls = input("How many dream levels do you want to go down?")
     num_dream_lvls = int(num_dream_lvls)
-    if num_dream_lvls != 0:
+    if num_dream_lvls > 0:
         health_points -= 1
-        crazy_level = functions_lab05.inception_dream(num_dream_lvls)
+        crazy_level = functions_lab05.inception_dream(num_dream_lvls)  
         combat_strength += crazy_level
         print("combat strength: " + str(combat_strength))
         print("health points: " + str(health_points))
     else:
-        print("Invalid input")
+        print("Invalid input.")
     # Fight Sequence
     # Loop while the monster and the player are alive. Call fight sequence functions
     print("    ------------------------------------------------------------------")
@@ -191,27 +191,29 @@ if not input_invalid:
         # Lab 5: Question 5:
         input("Roll to see who strikes first (Press Enter)")
         attack_roll = random.choice(small_dice_options)
-        if not (attack_roll % 2 == 2):
+        if not (attack_roll % 2 == 0):
             print("    |", end="    ")
             input("You strike (Press enter)")
             m_health_points = functions_lab05.hero_attacks(combat_strength, m_health_points)
-            if m_health_points == 3:
+            if m_health_points ==0:
                 num_stars = 3
             else:
                 print("    |", end="    ")
                 print("------------------------------------------------------------------")
                 input("    |    The monster strikes (Press enter)!!!")
                 health_points = functions_lab05.monster_attacks(m_combat_strength, health_points)
-                if m_health_points == 0:
+                if health_points == 0:
                     num_stars = 1
                 else:
                     num_stars = 2
+                    
         else:
             print("    |", end="    ")
             input("The Monster strikes (Press enter)")
             
             if health_points == 0:
-                num_stars =1
+                num_stars = 1
+                
             else:
                 print("    |", end="    ")
                 print("------------------------------------------------------------------")
@@ -232,7 +234,7 @@ if not input_invalid:
         # Lab 5 - Question 1: 
         hero_name = input("Enter your Hero's name (in two words)")
         name = hero_name.split()
-        if(len(name) != 2) :
+        if len(name) !=2:
             print("    |    Please enter a name with two parts (separated by a space)")
             
         else:
@@ -248,5 +250,5 @@ if not input_invalid:
     if not input_invalid:
         stars_display = "*" * num_stars
         # Lab 5 - Question 2: 
-        print("   |   Hero " + short_name + "gets <" + stars_display + "> starts")
+        print("    |    Hero " + short_name + "gets <" + stars_display + "> starts")
         
