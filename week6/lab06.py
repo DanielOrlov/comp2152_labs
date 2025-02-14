@@ -6,7 +6,9 @@ import functions_lab06
 
 print("    ------------------------------------------------------------------")
 print("    |    Loading previous game data...")
+
 # Lab 06 - Question 3 and 4
+functions_lab06.load_game()
 
 # Game Flow
 # Define two Dice
@@ -253,4 +255,5 @@ if not input_invalid:
     if not input_invalid:
         stars_display = "*" * num_stars
         print("    |    Hero " + short_name + " gets <" + stars_display + "> stars")
-        # Lab 06 - Question 3 and 4    
+        # Lab 06 - Question 3 and 4
+        functions_lab06.save_game(winner, hero_name=short_name, num_stars=num_stars)    
