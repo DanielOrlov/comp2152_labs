@@ -13,7 +13,7 @@ try:
                 rows = cursor.fetchall()
                 print("Name of rows with id > 14:\n")
                 for row in rows:
-                    print(rowp["name"])
+                    print(row["name"])
             except Exception as e:
                 print(f"Error executing query_1: {e}")
             # Delete Row based on the user input
