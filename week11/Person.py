@@ -6,17 +6,25 @@ class Person:
         self.__height = p_height
         self.public_prop = "I'm public"
 
-        #Getter for name
-        @property
-        def name(self)
-            return self.__name
-        
-        # Setter for name
-        @name.setter
-        def name(self, new_name):
-            self.__name = new_name
-        
-        def __del__(self):
-            print("The garbage collector is automatically destroying the person object")
+    #Getter for name
+    @property
+    def name(self):
+        return self.__name
+    
+    # Setter for name
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+    
+    def __del__(self):
+        print("The garbage collector is automatically destroying the person object")
 
-person1 = ("Mark", 20, 6)
+person1 = Person("Mark", 20, 6)
+
+# version 1
+print("The name of the person is " + str(person1.name))
+
+person1.name = "Alfred"
+print("The name of the person is " + str(person1.name))
+
+print("Public " + str(person1.public_prop))
