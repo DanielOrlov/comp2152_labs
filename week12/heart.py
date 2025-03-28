@@ -16,3 +16,6 @@ class Heart:
 
     def __str__(self):
         return f"Heart is beating at {self.bpm} bpm), "
+    
+    def __del__(self):
+        print("Heart is deleted by a destructor")
