@@ -21,6 +21,15 @@ class Mammal:
     def live_birth(self, p_live_birth):
         self.__life_birth = p_live_birth
 
+    def love(self):
+        print("This mammal is in love")
+    
+    def mammal_checkup(self):
+        print("Performing mammal health check..")
+        self.heart.beat()
+        if self.tick:
+            self.tick.suck_blood()
+
 
     def __str__(self):
         tick_status = "attached" if self.tick else "none"
