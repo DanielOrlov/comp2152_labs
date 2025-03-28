@@ -30,7 +30,7 @@ class Person(Mammal):
         return self.__height
     # Complex setter for height
     @height.setter
-    def height(self, p_height)
+    def height(self, p_height):
         self.__height = p_height
 
     # Lab 12 - Private or protected METHODS are not possible in python.
